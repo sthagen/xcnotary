@@ -8,8 +8,6 @@ use std::fmt;
 pub(crate) struct BundleInfo {
     #[serde(rename = "CFBundleIdentifier")]
     pub(crate) id: String,
-    #[serde(rename = "CFBundleName")]
-    pub(crate) name: String,
     #[serde(rename = "CFBundleVersion")]
     pub(crate) version: String,
     #[serde(rename = "CFBundleShortVersionString")]
@@ -47,7 +45,7 @@ pub(crate) enum NotarizationStatus {
 #[serde(rename_all = "kebab-case")]
 pub(crate) struct BundleEntitlements {
     #[serde(rename = "com.apple.security.get-task-allow")]
-    pub(crate) get_task_allow: Option<bool>
+    pub(crate) get_task_allow: Option<bool>,
 }
 
 /// Response from altool --upload-app

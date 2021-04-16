@@ -32,8 +32,6 @@ mod tests {
     <dict>
         <key>CFBundleIdentifier</key>
         <string>com.example.helloworld</string>
-        <key>CFBundleName</key>
-        <string>HelloWorld</string>
         <key>CFBundleShortVersionString</key>
         <string>1.0.14</string>        
         <key>CFBundleVersion</key>
@@ -126,7 +124,7 @@ mod tests {
 </plist>
 "#;
 
-    static ENTITLEMENTS_OUTPUT:&str = r#"
+    static ENTITLEMENTS_OUTPUT: &str = r#"
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -189,7 +187,6 @@ mod tests {
         let result = super::bundle_info_from_file(temp_file);
 
         assert_eq!(result.id, "com.example.helloworld");
-        assert!(result.name.starts_with("HelloWorld"));
     }
 
     #[test]
